@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 
 
-function CapTempBreaking({match}) {
-  const urlb = "https://tarea-1-breaking-bad.herokuapp.com/api/episodes?series=Breaking+Bad"
+function CapTempSaul({match}) {
+  const urlb = "https://tarea-1-breaking-bad.herokuapp.com/api/episodes?series=Better+Call+Saul"
   const [episodesb, setEpisodesb] = useState();
   const history = useHistory();
   
@@ -17,7 +17,7 @@ function CapTempBreaking({match}) {
     }, [setEpisodesb])
 
   const goToPage = (episode_id) => {
-    history.push(`/breaking/episode/${episode_id}`);
+    history.push(`/saul/episode/${episode_id}`);
   }
 
   console.log(match.params.season);
@@ -25,7 +25,7 @@ function CapTempBreaking({match}) {
   return (
     <div className="Temporadas_Breaking">
       <header className="Temporadas_Breaking-header">
-      <h1>Episodios Breaking Bad</h1>
+      <h1>Episodios Better Call Saul</h1>
       <ol>
           
       { !episodesb ? '\n Cargando...' : episodesb.map((episodeb, index) => {
@@ -43,4 +43,4 @@ function CapTempBreaking({match}) {
   );
 }
 
-export default CapTempBreaking;
+export default CapTempSaul;

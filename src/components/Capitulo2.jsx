@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 
-function Capitulo({match}) {
+function Capitulo2({match}) {
   const [item, setItem] = useState({});
   const history = useHistory();
 
@@ -17,7 +17,7 @@ function Capitulo({match}) {
   }, [match]);
 
   const goToPage = (char_id) => {
-    history.push(`/breaking/character/${char_id}`);
+    history.push(`/saul/character/${char_id}`);
   }
 
   
@@ -36,4 +36,4 @@ function Capitulo({match}) {
   );
 }
 
-export default Capitulo;
+export default Capitulo2;
