@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 
 
-function TemporadasBetterCallSaul() {
-  const urlb = "https://tarea-1-breaking-bad.herokuapp.com/api/episodes?series=Better+Call+Saul"
+function TemporadasBreaking({match}) {
+  const urlb = "https://tarea-1-breaking-bad.herokuapp.com/api/episodes?series=Breaking+Bad"
   const [episodesb, setEpisodesb] = useState();
   const history = useHistory();
   
@@ -17,15 +17,19 @@ function TemporadasBetterCallSaul() {
     }, [setEpisodesb])
 
   const goToPage = (episode_id) => {
-    history.push(`/saul/episode/${episode_id}`);
+    history.push(`/breaking/episode/${episode_id}`);
   }
 
+  console.log(match.params.season);
+  console.log(episodesb);
   return (
-    <div className="Temporadas_Saul">
-      <header className="Temporadas_Saul-header">
-      <h1>Episodios Better Call Saul</h1>
+    <div className="Temporadas_Breaking">
+      <header className="Temporadas_Breaking-header">
+      <h1>Episodios Breaking Bad</h1>
       <ol>
+          
       { !episodesb ? '\n Cargando...' : episodesb.map((episodeb, index) => {
+        //   if(episodeb.season == match.params.season)
         return (
         <div>
            <button style={{margin: '10px'}} onClick={() => goToPage(episodeb.episode_id)} key={index}>
@@ -39,4 +43,4 @@ function TemporadasBetterCallSaul() {
   );
 }
 
-export default TemporadasBetterCallSaul;
+export default TemporadasBreaking;
