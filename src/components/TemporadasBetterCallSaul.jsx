@@ -8,7 +8,7 @@ function TemporadasBetterCallSaul() {
   const goToPage = (season) => {
     history.push(`/saul/${season}`);
   }
-  const temporadas = [1,2,3,4,5];
+  const temporadas = [1,2,3,4,5,6];
 
   return (
     <div className="Temporadas_Better">

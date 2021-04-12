@@ -33,11 +33,11 @@ function Personaje({match}) {
         return <p>{occu}</p>
       })}</h3>}
       {item && item[0] && <h3>Temporadas en las que aparece de Breaking Bad: {item[0].appearance.map((appe,index) => {
-        return <button style={{margin: '10px'}} onClick={() => goToPage("")} key={index}>
+        return <button style={{margin: '10px'}} onClick={() => goToPage("2")} key={index}>
         {appe} </button>
       })}</h3>}
       {item && item[0] && <h3>Temporadas en las que aparece de Better Call Saul: {item[0].better_call_saul_appearance.map((appe,index) => {
-        return <button style={{margin: '10px'}} onClick={() => goToPage("")} key={index}>
+        return <button style={{margin: '10px'}} onClick={() => goToPage("2")} key={index}>
         {appe} </button>
       })}</h3>}
     </div>
